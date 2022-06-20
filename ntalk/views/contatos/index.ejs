@@ -11,12 +11,29 @@
                 </form>
                 <p>Bem-vindo <%- usuario.nome %>
                 </p>
-                <p>Contatos do usuario: <% contatos.forEach(function(contato,index){ %>
-                        <tr>
-                                <th><%- contato.nome %></th>
-                        </tr>
-                        <% }) %>
-                </p>
+                <table>
+                        <thead>
+                                <tr>
+                                        <th>Nome</th>
+                                        <th>Email</th>
+                                        <th>Ação</th>
+                                </tr>
+
+                        </thead>
+                        <tbody>
+                                <% contatos.forEach(function(contato,index){ %>
+                                        <tr>
+                                                <th>
+                                                        <%- contato.nome %>
+                                                </th>
+                                                <th>
+                                                        <%- contato.email %>
+                                                </th>
+                                                <th>Botao</th>
+                                        </tr>
+                                        <% }) %>
+                        </tbody>
+                </table>
         </section>
         <%- include('../home/exit'); %>
                 <%- include('../home/footer'); %>
